@@ -32,7 +32,7 @@ function EyeDisease() {
 
     try {
       setLoading(true);
-      const res = await axios.post('44.229.227.142/predict', formData);
+      const res = await axios.post('https://ai-eye-diagnostics-system.onrender.com/predict', formData);
       setResult(res.data);
       setError(null);
     } catch (err) {
