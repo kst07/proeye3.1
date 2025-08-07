@@ -268,4 +268,6 @@ def serve(path):
         return send_from_directory(dist_dir, 'index.html')
 
 if __name__ == '__main__':
-    app.run(debug=False, threaded=True, host='0.0.0.0', port=5000)
+    # ใช้ PORT จาก environment variable
+    port = int(os.environ.get('PORT', 5000))
+    app.run(debug=False, threaded=True, host='0.0.0.0', port=port)
