@@ -1,4 +1,4 @@
-# app.py - Updated for Eye3 Dataset (10 classes)
+# app.py
 import numpy as np
 import os
 import json
@@ -256,12 +256,11 @@ def get_classes():
         'classes': classes_with_info
     })
 
-# Serve static files (React app)
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
 def serve(path):
     root_dir = os.path.abspath(os.path.dirname(__file__))
-    dist_dir = os.path.join(root_dir, 'front', 'dist')
+    dist_dir = os.path.join(root_dir, 'frontend', 'build')
 
     if path != "" and os.path.exists(os.path.join(dist_dir, path)):
         return send_from_directory(dist_dir, path)
