@@ -1,0 +1,15 @@
+# Exported from Render on 2025-08-07T09:05:53Z
+services:
+- type: web
+  name: AI Eye Diagnostics System
+  runtime: python
+  repo: https://github.com/kst07/proeye3.1
+  plan: free
+  envVars:
+  - key: AI
+    sync: false
+  region: oregon
+  buildCommand: pip install -r requirements.txt
+  startCommand: AI Eye Diagnostics System.com
+  autoDeployTrigger: commit
+version: "1"
